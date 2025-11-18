@@ -12,6 +12,18 @@ type Module = {
   description: string
 }
 
+type GalleryItem = {
+  src: string
+  caption: string
+}
+
+type Testimonial = {
+  image: string
+  quote: string
+  author: string
+  result: string
+}
+
 const affiliateLink = 'https://pay.kiwify.com.br/aFJXlVa?afid=SIs26xIg'
 
 const benefits: Benefit[] = [
@@ -100,6 +112,57 @@ const deliverables = [
   'Garantia incondicional de 7 dias',
 ]
 
+const gallery: GalleryItem[] = [
+  {
+    src: '/provas/28.webp',
+    caption: 'Reposicao de massa em fios castanhos apos cronograma antiqueda.',
+  },
+  {
+    src: '/provas/29.webp',
+    caption: 'Volume controlado e brilho espelhado em apenas 30 dias.',
+  },
+  {
+    src: '/provas/22.webp',
+    caption: 'Fio loiro fortalecido para suportar nova rodada de luzes.',
+  },
+  {
+    src: '/provas/d8c5a48e-10de-4190-af3a-64a0d1c892d5.webp',
+    caption: 'Cachos definidos sem frizz usando o modulo de ativacao.',
+  },
+  {
+    src: '/provas/19.webp',
+    caption: 'Transicao do afinamento ao comprimento cheio e alinhado.',
+  },
+  {
+    src: '/provas/21.webp',
+    caption: 'Fios grisalhos protegidos e com corte polido.',
+  },
+]
+
+const testimonials: Testimonial[] = [
+  {
+    image: '/provas/img_9146_2.webp',
+    quote:
+      'Progresiva na raiz e zero quebra na primeira lavagem pos quimica. Amei, deu certo demais!',
+    author: 'Bruna S.',
+    result: 'Cronograma aplicado por 4 semanas',
+  },
+  {
+    image: '/provas/995e4153-0661-449b-aadf-536c58484f68.webp',
+    quote:
+      'Meu cabelo era poroso, pontas espigadas e mesmo com produtos caros nao resolvia. O Recupery foi o melhor investimento da minha vida.',
+    author: 'Leticia M.',
+    result: 'Preparacao pre-quimica completa',
+  },
+  {
+    image: '/provas/img_9151.webp',
+    quote:
+      'Fiz terapia de oleos por 3 semanas e a queda caiu drasticamente. To chocada com a diferenca.',
+    author: 'Karen P.',
+    result: 'Modulo de ativacao do couro cabeludo',
+  },
+]
+
 const benefitsHTML = benefits
   .map(
     (item) => `
@@ -133,6 +196,34 @@ const deliverablesHTML = deliverables
         <span></span>
         <p>${item}</p>
       </li>
+    `,
+  )
+  .join('')
+
+const galleryHTML = gallery
+  .map(
+    (item) => `
+      <figure class="proof-card">
+        <img src="${item.src}" alt="${item.caption}" loading="lazy" />
+        <figcaption>${item.caption}</figcaption>
+      </figure>
+    `,
+  )
+  .join('')
+
+const testimonialsHTML = testimonials
+  .map(
+    (item) => `
+      <article class="testimonial-card glass">
+        <div class="avatar">
+          <img src="${item.image}" alt="${item.author}" loading="lazy" />
+        </div>
+        <p class="quote">"${item.quote}"</p>
+        <div class="author">
+          <strong>${item.author}</strong>
+          <span>${item.result}</span>
+        </div>
+      </article>
     `,
   )
   .join('')
@@ -238,6 +329,26 @@ if (app) {
           <div class="device">
             <span>mockup</span>
           </div>
+        </div>
+      </section>
+
+      <section class="section gallery">
+        <div class="section-header">
+          <p class="eyebrow">antes e depois reais</p>
+          <h2>Resultados que mostram o brilho, forca e densidade de volta</h2>
+        </div>
+        <div class="proof-grid">
+          ${galleryHTML}
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="section-header">
+          <p class="eyebrow">depoimentos</p>
+          <h2>Mensagens que chegam todos os dias da comunidade</h2>
+        </div>
+        <div class="testimonial-grid">
+          ${testimonialsHTML}
         </div>
       </section>
     </main>
