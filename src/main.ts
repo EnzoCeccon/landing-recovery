@@ -74,11 +74,29 @@ const modules: Module[] = [
   },
 ]
 
+const supportItems = [
+  {
+    title: 'Aulas ao vivo quinzenais',
+    description:
+      'Sessões em grupo para tirar dúvidas, revisar cronogramas e receber orientações diretamente da equipe Recupery.',
+  },
+  {
+    title: 'Comunidade premium',
+    description:
+      'Espaço seguro no Telegram para compartilhar evoluções, fotos e receber feedback diário de especialistas.',
+  },
+  {
+    title: 'Acompanhamento guiado',
+    description:
+      'Check-ins estruturados nas 4 primeiras semanas para garantir que você está executando o cronograma corretamente.',
+  },
+]
+
 const deliverables = [
-  'Calendario anti-dano pronto para usar',
-  'Listas de produtos aprovados por faixa de preco',
-  'Acesso vitalicio + atualizacoes e lives mensais',
+  '13 modulos HD com passo a passo gravado',
+  'Aulas ao vivo quinzenais para ajustes finos',
   'Comunidade privada com suporte diario',
+  'Calendario anti-dano e listas de produtos por faixa de preco',
   'Garantia incondicional de 7 dias',
 ]
 
@@ -127,14 +145,14 @@ if (app) {
       <section class="hero-panel">
         <div class="hero-copy">
           <p class="tag">Metodo Recupery · Mulher</p>
-          <h1>Reconstrua cabelos detonados por quimica com um plano premium</h1>
+          <h1>Programa Recupery: 13 modulos para recuperar fios detonados</h1>
           <p class="lede">
-            Da raiz sensibilizada ao comprimento poroso: siga um roteiro que combina detox, nutricao profunda e blindagem para recuperar brilho e densidade sem apostas aleatorias. Em 1 mes de aplicacao voce ja percebe diferenca real no brilho, na forca e na saude dos fios, exatamente como as mais de 3.000 mulheres que ja passaram pelo metodo.
+            Da raiz sensibilizada ao comprimento poroso: siga um roteiro com 13 modulos que combinam detox, nutricao profunda e blindagem para recuperar brilho e densidade sem apostas aleatorias. Em 1 mes voce ja percebe diferenca real no brilho, na forca e na saude dos fios, exatamente como as mais de 3.000 mulheres que ja passaram pelo metodo.
           </p>
           <ul class="hero-list">
+            <li>13 modulos sob demanda cobrindo diagnostico, cronograma e selagem</li>
+            <li>Aulas ao vivo, comunidade premium e acompanhamento guiado</li>
             <li>Protocolos prontos para progressiva, luzes, botox ou transicao</li>
-            <li>Planilhas editaveis para ajustar ao seu tempo e budget</li>
-            <li>Suporte diario com tricologista e equipe no Telegram</li>
           </ul>
           <div class="cta-row">
             <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">Quero entrar agora</a>
@@ -177,10 +195,30 @@ if (app) {
       <section class="section modules">
         <div class="section-header">
           <p class="eyebrow">roadmap completo</p>
-          <h2>Etapas que levam seu cabelo do SOS ao brilho espelhado</h2>
+          <h2>13 modulos que levam seu cabelo do SOS ao brilho espelhado</h2>
         </div>
         <div class="module-grid">
           ${modulesHTML}
+        </div>
+      </section>
+
+      <section class="section support">
+        <div class="section-header">
+          <p class="eyebrow"> acompanhamento real </p>
+          <h2>Aulas ao vivo, comunidade e suporte pra aplicar o plano</h2>
+          <p>O Recupery nao e apenas video gravado. Voce aprende, aplica e ajusta com o time acompanhando cada fase.</p>
+        </div>
+        <div class="support-grid">
+          ${supportItems
+            .map(
+              (item) => `
+            <article class="card glass">
+              <h3>${item.title}</h3>
+              <p>${item.description}</p>
+            </article>
+          `,
+            )
+            .join('')}
         </div>
       </section>
 
