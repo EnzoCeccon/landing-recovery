@@ -10,44 +10,44 @@ const affiliateLink = 'https://pay.kiwify.com.br/aFJXlVa?afid=SIs26xIg'
 
 const benefits: Benefit[] = [
   {
-    title: 'Protocolo personalizado',
+    title: 'Diagnostico da porosidade',
     description:
-      'Mapeia causas hormonais, nutricionais e emocionais para montar o passo a passo ideal para cada grau de calvicie.',
+      'Aprenda a identificar como quimicas e calor abriram sua cuticula e defina o nivel de dano antes de iniciar o tratamento.',
     icon: '01',
   },
   {
-    title: 'Aulas praticas',
+    title: 'Protocolos anti-ressecar',
     description:
-      'Demonstra, em video, como aplicar shampoos, tonicos e massagens ativadoras para estimular o foliculo no dia a dia.',
+      'Cronogramas semanais equilibram umectacao, nutricao e reconstrucao para devolver brilho sem pesar nos fios finos.',
     icon: '02',
   },
   {
-    title: 'Suporte cientifico',
+    title: 'SOS pos-quimica',
     description:
-      'Equipe revisa duvidas semanalmente e atualiza os protocolos conforme novos estudos de tricologia.',
+      'Passo a passo imediato para neutralizar danos apos progressiva, descoloracao, botox ou escova, evitando elasticidade e quebra.',
     icon: '03',
   },
   {
-    title: 'Resultados sustentaveis',
+    title: 'Ativacao do couro cabeludo',
     description:
-      'Combina rotinas de nutricao, detox e fortalecimento para manter os fios no ciclo de crescimento por mais tempo.',
+      'Massagens guiadas e tonicos naturais reativam a circulacao e estimulam o nascimento de novos fios nas areas fragilizadas.',
     icon: '04',
   },
 ]
 
 const planHighlights = [
-  'Modulo diagnostico para identificar o grau da queda',
-  'Cronograma antiqueda dividido em detox, ativacao e blindagem',
-  'Listas de produtos aprovados e combinacoes seguras para cada fase',
-  'Acesso vitalicio a novas aulas, materiais e lives de correcao',
-  'Acompanhamento em comunidade fechada por 60 dias',
+  'Mapa de diagnostico para fios ressecados, porosos ou afinados',
+  'Protocolos distintos para cabelos naturais, com quimica e em transicao',
+  'Listas aprovadas de produtos e ativos seguros para cada fase',
+  'Calendario editavel para acompanhar a evolucao semanal',
+  'Acesso vitalicio com atualizacoes e lives de correcao',
 ]
 
 const ctaChecklist = [
-  'Videoaulas curtas, disponiveis em qualquer dispositivo',
-  'Metodo 100% natural, compatível com tratamentos medicos',
+  'Feito para mulheres com danos por quimica, calor ou queda difusa',
+  'Rotinas sustentaveis que cabem na agenda corrida',
   'Garantia de 7 dias para testar sem riscos',
-  'Suporte direto com especialistas e time no Telegram',
+  'Suporte direto com especialistas e comunidade no Telegram',
 ]
 
 const benefitsHTML = benefits
@@ -77,27 +77,27 @@ if (app) {
     <main class="page">
       <header class="hero">
         <div class="hero-content">
-          <p class="badge">Saude capilar orientada</p>
-          <h1>Metodo Recupery: traga seus fios de volta ao ciclo ativo</h1>
+          <p class="badge">Rotina anti-dano para mulheres</p>
+          <h1>Metodo Recupery: recupere fios danificados por quimica e calor</h1>
           <p class="subtitle">
-            Protocolo completo para mulheres e homens com calvicie ou afinamento que desejam reconstruir o couro cabeludo de forma natural, guiada e segura.
+            Guia completo para quem enfrenta ressecamento extremo, pontas elásticas, queda por escovas progressivas ou ciclos de descoloração e quer reconstruir o cabelo de forma saudável e progressiva.
           </p>
           <div class="hero-actions">
-            <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">Quero recuperar meus fios</a>
+            <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">Quero salvar meu cabelo</a>
             <a class="btn ghost" href="#beneficios">Ver beneficios</a>
           </div>
           <ul class="hero-stats">
             <li>
-              <strong>12 sem</strong>
-              <span>media para os primeiros sinais</span>
+              <strong>8 sem</strong>
+              <span>media para sentir maciez real</span>
             </li>
             <li>
               <strong>6k+</strong>
-              <span>alunos acompanhados</span>
+              <span>mulheres acompanhadas</span>
             </li>
             <li>
               <strong>98%</strong>
-              <span>aprovam o metodo</span>
+              <span>relatam menor quebra</span>
             </li>
           </ul>
         </div>
@@ -112,9 +112,9 @@ if (app) {
       <section id="beneficios" class="section">
         <div class="section-header">
           <p class="eyebrow">por que funciona</p>
-          <h2>Beneficios que aceleram a recuperacao capilar</h2>
+          <h2>Beneficios pensados para danos femininos</h2>
           <p>
-            Cada etapa combina aulas praticas, protocolos supervisionados e ajustes finos para que o couro cabeludo volte a produzir fios mais densos e fortes.
+            Cada aula ajuda a entender o que o uso de quimica, calor e falta de nutricao causou no fio e como reverter com tecnicas simples e acompanhadas por profissionais.
           </p>
         </div>
         <div class="benefits-grid">
@@ -125,8 +125,8 @@ if (app) {
       <section id="plano" class="section plan">
         <div class="section-header">
           <p class="eyebrow">tratamento orientado</p>
-          <h2>Como o Metodo Recupery devolve volume aos fios</h2>
-          <p>Aplicacao simples, baseada em protocolos clinicos e com monitoramento da equipe para que voce nao perca tempo com tentativas soltas.</p>
+          <h2>Pare de “apagar incêndios” e siga um plano claro</h2>
+          <p>O Metodo Recupery organiza o cuidado capilar em etapas de detox, nutricao profunda e blindagem para que voce recupere toque, brilho e densidade sem testar receitas aleatorias.</p>
         </div>
         <div class="plan-card">
           <div class="plan-info">
@@ -145,9 +145,9 @@ if (app) {
       <section id="cta" class="section final-cta">
         <div>
           <p class="eyebrow">decida hoje</p>
-          <h2>Entre para o Metodo Recupery e retome sua autoestima</h2>
+          <h2>Cuide do seu cabelo como prioridade diaria</h2>
           <p>
-            Bastam alguns minutos por dia para seguir as videoaulas, aplicar os protocolos e acompanhar a reducao da queda com a supervisao do time Recupery.
+            Bastam alguns minutos por dia para seguir as videoaulas, adaptar o cronograma ao seu tipo de cabelo e acompanhar a reducao da quebra com a supervisao do time Recupery.
           </p>
           <ul class="cta-list">
             ${checklistHTML}
