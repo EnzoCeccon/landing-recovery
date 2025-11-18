@@ -129,7 +129,7 @@ if (app) {
           <p class="tag">Metodo Recupery · Mulher</p>
           <h1>Reconstrua cabelos detonados por quimica com um plano premium</h1>
           <p class="lede">
-            Da raiz sensibilizada ao comprimento poroso: siga um roteiro que combina detox, nutricao profunda e blindagem para recuperar brilho e densidade sem apostas aleatorias. Em 1 mes de aplicacao voce ja percebe diferenca real no brilho, na forca e na saude dos fios.
+            Da raiz sensibilizada ao comprimento poroso: siga um roteiro que combina detox, nutricao profunda e blindagem para recuperar brilho e densidade sem apostas aleatorias. Em 1 mes de aplicacao voce ja percebe diferenca real no brilho, na forca e na saude dos fios, exatamente como as mais de 3.000 mulheres que ja passaram pelo metodo.
           </p>
           <ul class="hero-list">
             <li>Protocolos prontos para progressiva, luzes, botox ou transicao</li>
@@ -146,8 +146,8 @@ if (app) {
               <span>para notar brilho, força e saude dos fios</span>
             </article>
             <article>
-              <strong>6.000+</strong>
-              <span>alunas com danos severos</span>
+              <strong>3.000+</strong>
+              <span>mulheres com resultados comprovados</span>
             </article>
             <article>
               <strong>98%</strong>
