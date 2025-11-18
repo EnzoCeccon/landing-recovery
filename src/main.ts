@@ -6,55 +6,87 @@ type Benefit = {
   icon: string
 }
 
+type Module = {
+  title: string
+  subtitle: string
+  description: string
+}
+
 const affiliateLink = 'https://pay.kiwify.com.br/aFJXlVa?afid=SIs26xIg'
 
 const benefits: Benefit[] = [
   {
     title: 'Diagnostico da porosidade',
     description:
-      'Aprenda a identificar como quimicas e calor abriram sua cuticula e defina o nivel de dano antes de iniciar o tratamento.',
+      'Entenda em minutos como quimicas e calor alteraram sua cuticula e qual protocolo seguir primeiro.',
     icon: '01',
   },
   {
     title: 'Protocolos anti-ressecar',
     description:
-      'Cronogramas semanais equilibram umectacao, nutricao e reconstrucao para devolver brilho sem pesar nos fios finos.',
+      'Cronogramas equilibram umectacao, nutricao e reconstrucao para devolver brilho sem pesar.',
     icon: '02',
   },
   {
     title: 'SOS pos-quimica',
     description:
-      'Passo a passo imediato para neutralizar danos apos progressiva, descoloracao, botox ou escova, evitando elasticidade e quebra.',
+      'Guia rapido para neutralizar danos apos progressiva, luzes, botox ou descoloracao.',
     icon: '03',
   },
   {
     title: 'Ativacao do couro cabeludo',
     description:
-      'Massagens guiadas e tonicos naturais reativam a circulacao e estimulam o nascimento de novos fios nas areas fragilizadas.',
+      'Massagens guiadas e tonicos naturais reativam a circulacao e estimulam o nascimento de novos fios.',
     icon: '04',
   },
 ]
 
-const planHighlights = [
-  'Mapa de diagnostico para fios ressecados, porosos ou afinados',
-  'Protocolos distintos para cabelos naturais, com quimica e em transicao',
-  'Listas aprovadas de produtos e ativos seguros para cada fase',
-  'Calendario editavel para acompanhar a evolucao semanal',
-  'Acesso vitalicio com atualizacoes e lives de correcao',
+const modules: Module[] = [
+  {
+    title: 'Modulo 01',
+    subtitle: 'Raiz e fluxo sanguineo',
+    description:
+      'Reset detox + massoterapia para desobstruir o couro cabeludo e preparar os fios para absorver nutricao.',
+  },
+  {
+    title: 'Modulo 02',
+    subtitle: 'Nutricao de elite',
+    description:
+      'Protocolos de lipideos e ceramidas para selar a cuticula, controlar frizz extremo e recuperar o toque.',
+  },
+  {
+    title: 'Modulo 03',
+    subtitle: 'Reconstrucao segura',
+    description:
+      'Aplicacoes com aminoacidos e queratina em doses certas para evitar rigidez e quebra.',
+  },
+  {
+    title: 'Modulo 04',
+    subtitle: 'Blindagem de calor',
+    description:
+      'Tecnicas de styling, protetores e finalizadores que protegem o progresso mesmo usando secador ou prancha.',
+  },
+  {
+    title: 'Modulo 05',
+    subtitle: 'Cronograma vitalicio',
+    description:
+      'Planilhas editaveis, lembretes e ajustes sazonais para manter os resultados durante todo o ano.',
+  },
 ]
 
-const ctaChecklist = [
-  'Feito para mulheres com danos por quimica, calor ou queda difusa',
-  'Rotinas sustentaveis que cabem na agenda corrida',
-  'Garantia de 7 dias para testar sem riscos',
-  'Suporte direto com especialistas e comunidade no Telegram',
+const deliverables = [
+  'Calendario anti-dano pronto para usar',
+  'Listas de produtos aprovados por faixa de preco',
+  'Acesso vitalicio + atualizacoes e lives mensais',
+  'Comunidade privada com suporte diario',
+  'Garantia incondicional de 7 dias',
 ]
 
 const benefitsHTML = benefits
   .map(
     (item) => `
-      <article class="benefit-card">
-        <span class="benefit-icon">${item.icon}</span>
+      <article class="card glass">
+        <span class="pill">${item.icon}</span>
         <h3>${item.title}</h3>
         <p>${item.description}</p>
       </article>
@@ -62,12 +94,29 @@ const benefitsHTML = benefits
   )
   .join('')
 
-const highlightsHTML = planHighlights
-  .map((feature) => `<li><span>&check;</span>${feature}</li>`)
+const modulesHTML = modules
+  .map(
+    (item) => `
+      <article class="module-card glass">
+        <header>
+          <span>${item.title}</span>
+          <strong>${item.subtitle}</strong>
+        </header>
+        <p>${item.description}</p>
+      </article>
+    `,
+  )
   .join('')
 
-const checklistHTML = ctaChecklist
-  .map((item) => `<li><span>&middot;</span>${item}</li>`)
+const deliverablesHTML = deliverables
+  .map(
+    (item) => `
+      <li>
+        <span></span>
+        <p>${item}</p>
+      </li>
+    `,
+  )
   .join('')
 
 const app = document.querySelector<HTMLDivElement>('#app')
@@ -75,89 +124,82 @@ const app = document.querySelector<HTMLDivElement>('#app')
 if (app) {
   app.innerHTML = `
     <main class="page">
-      <header class="hero">
-        <div class="hero-content">
-          <p class="badge">Rotina anti-dano para mulheres</p>
-          <h1>Metodo Recupery: recupere fios danificados por quimica e calor</h1>
-          <p class="subtitle">
-            Guia completo para quem enfrenta ressecamento extremo, pontas elásticas, queda por escovas progressivas ou ciclos de descoloração e quer reconstruir o cabelo de forma saudável e progressiva.
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="tag">Metodo Recupery · Mulher</p>
+          <h1>Reconstrua cabelos detonados por quimica com um plano premium</h1>
+          <p class="lede">
+            Da raiz sensibilizada ao comprimento poroso: siga um roteiro que combina detox, nutricao profunda e blindagem para recuperar brilho e densidade sem apostas aleatorias.
           </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">Quero salvar meu cabelo</a>
-            <a class="btn ghost" href="#beneficios">Ver beneficios</a>
-          </div>
-          <ul class="hero-stats">
-            <li>
-              <strong>8 sem</strong>
-              <span>media para sentir maciez real</span>
-            </li>
-            <li>
-              <strong>6k+</strong>
-              <span>mulheres acompanhadas</span>
-            </li>
-            <li>
-              <strong>98%</strong>
-              <span>relatam menor quebra</span>
-            </li>
+          <ul class="hero-list">
+            <li>Protocolos prontos para progressiva, luzes, botox ou transicao</li>
+            <li>Planilhas editaveis para ajustar ao seu tempo e budget</li>
+            <li>Suporte diario com tricologista e equipe no Telegram</li>
           </ul>
+          <div class="cta-row">
+            <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">Quero entrar agora</a>
+            <a class="btn secondary" href="#beneficios">Ver como funciona</a>
+          </div>
+          <div class="hero-metrics">
+            <article>
+              <strong>8 semanas</strong>
+              <span>para sentir maciez real</span>
+            </article>
+            <article>
+              <strong>6.000+</strong>
+              <span>alunas com danos severos</span>
+            </article>
+            <article>
+              <strong>98%</strong>
+              <span>relataram menos quebra</span>
+            </article>
+          </div>
         </div>
         <div class="hero-visual">
-          <div class="mockup">
-            <span>Preview</span>
-            <p>Espaco reservado para fotos de antes e depois das alunas do Metodo Recupery.</p>
+          <div class="eclipse"></div>
+          <div class="shot">
+            <p>Insira seus antes e depois aqui</p>
           </div>
         </div>
-      </header>
+      </section>
 
-      <section id="beneficios" class="section">
+      <section id="beneficios" class="section glow">
         <div class="section-header">
-          <p class="eyebrow">por que funciona</p>
-          <h2>Beneficios pensados para danos femininos</h2>
-          <p>
-            Cada aula ajuda a entender o que o uso de quimica, calor e falta de nutricao causou no fio e como reverter com tecnicas simples e acompanhadas por profissionais.
-          </p>
+          <p class="eyebrow">por que o recupery</p>
+          <h2>O unico metodo criado para fios com dano quimico extremo</h2>
+          <p>Os pilares combinam ciencia capilar + rotina real de mulheres que precisam recuperar a saude dos fios sem abandonar a agenda.</p>
         </div>
-        <div class="benefits-grid">
+        <div class="card-grid">
           ${benefitsHTML}
         </div>
       </section>
 
-      <section id="plano" class="section plan">
+      <section class="section modules">
         <div class="section-header">
-          <p class="eyebrow">tratamento orientado</p>
-          <h2>Pare de “apagar incêndios” e siga um plano claro</h2>
-          <p>O Metodo Recupery organiza o cuidado capilar em etapas de detox, nutricao profunda e blindagem para que voce recupere toque, brilho e densidade sem testar receitas aleatorias.</p>
+          <p class="eyebrow">roadmap completo</p>
+          <h2>Etapas que levam seu cabelo do SOS ao brilho espelhado</h2>
         </div>
-        <div class="plan-card">
-          <div class="plan-info">
-            <p class="plan-label">Metodo Recupery</p>
-            <h3 class="plan-title">Programa completo de recuperacao capilar</h3>
-            <p class="plan-note">Liberado na hora, com acesso vitalicio + atualizacoes futuras.</p>
-          </div>
-          <ul class="plan-list">
-            ${highlightsHTML}
-          </ul>
-          <a class="btn primary full" href="${affiliateLink}" target="_blank" rel="noreferrer">Garantir acesso vitalicio</a>
-          <p class="plan-guarantee">Se em 7 dias voce achar que o Metodo nao faz sentido, basta solicitar o estorno e receber 100% do valor de volta.</p>
+        <div class="module-grid">
+          ${modulesHTML}
         </div>
       </section>
 
-      <section id="cta" class="section final-cta">
-        <div>
-          <p class="eyebrow">decida hoje</p>
-          <h2>Cuide do seu cabelo como prioridade diaria</h2>
-          <p>
-            Bastam alguns minutos por dia para seguir as videoaulas, adaptar o cronograma ao seu tipo de cabelo e acompanhar a reducao da quebra com a supervisao do time Recupery.
-          </p>
-          <ul class="cta-list">
-            ${checklistHTML}
+      <section class="section offer">
+        <div class="offer-copy">
+          <p class="eyebrow">o que voce recebe hoje</p>
+          <h2>Entre agora e tenha acesso vitalicio a todos os materiais</h2>
+          <ul class="deliverables">
+            ${deliverablesHTML}
           </ul>
+          <div class="cta-row">
+            <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">Garantir minha vaga</a>
+            <span class="guarantee">Garantia incondicional de 7 dias</span>
+          </div>
         </div>
-        <div class="cta-actions">
-          <a class="btn primary" href="${affiliateLink}" target="_blank" rel="noreferrer">
-            Quero entrar agora
-          </a>
-          <a class="btn outline" href="#plano">Ver tudo que vou receber</a>
+        <div class="offer-visual">
+          <div class="device">
+            <span>mockup</span>
+          </div>
         </div>
       </section>
     </main>
